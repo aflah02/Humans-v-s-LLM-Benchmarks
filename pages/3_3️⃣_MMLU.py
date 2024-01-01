@@ -30,9 +30,9 @@ subset = st.sidebar.selectbox("Choose Split", ("Train", "Validation", "Test"), d
 # Choose Difficulty
 subject = st.sidebar.selectbox("Choose Subject", mmlu_subsets, disabled=gameState != "preStart")
 
-data = pd.read_parquet(os.path.join(data_folder, f'MMLU-{subject}-{subset.lower()}.parquet'))
+data = pd.read_parquet(os.path.join(data_folder, f'mmlu-{subject}-{subset.lower()}.parquet'))
 
-total_questions = len(pd.read_parquet(os.path.join(data_folder, f'MMLU-{subject}-{subset.lower()}.parquet')))
+total_questions = len(pd.read_parquet(os.path.join(data_folder, f'mmlu-{subject}-{subset.lower()}.parquet')))
 
 num_questions = st.sidebar.text_input("Number of Questions (Total Questions: {})".format(total_questions), min(10, total_questions), disabled=gameState != "preStart")
 num_questions = int(num_questions) if num_questions.isdigit() else min(10, total_questions)
