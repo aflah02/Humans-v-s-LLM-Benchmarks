@@ -44,7 +44,7 @@ st.session_state["6_questions"] = questions
 st.session_state["6_answerKey"] = answerKey
 
 if gameState == "preStart":
-    st.write("You will be presented with 10 randomly questions from the GSM8k dataset.")
+    st.write(f"You will be presented with {num_questions} randomly chosen questions from the GSM8k dataset.")
     st.write("Your task is to answer the questions correctly.")
     st.write("You will be scored based on your accuracy")
     st.write("Good luck!")

@@ -48,7 +48,7 @@ st.session_state["4_choices"] = choices
 st.session_state["4_answerKey"] = answerKey
 
 if gameState == "preStart":
-    st.write("You will be presented with 10 randomly questions from the TruthfulQA dataset.")
+    st.write(f"You will be presented with {num_questions} randomly chosen questions from the TruthfulQA dataset.")
     st.write("Your task is to answer the questions correctly.")
     st.write("You will be scored based on your accuracy")
     st.write("Good luck!")

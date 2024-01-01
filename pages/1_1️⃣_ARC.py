@@ -47,7 +47,7 @@ st.session_state["1_choices"] = choices
 st.session_state["1_answerKey"] = answerKey
 
 if gameState == "preStart":
-    st.write("You will be presented with 10 randomly questions from the AI2 Reasoning Challenge (ARC).")
+    st.write(f"You will be presented with {num_questions} randomly chosen questions from the AI2 Reasoning Challenge (ARC).")
     st.write("Your task is to answer the questions correctly.")
     st.write("You will be scored based on your accuracy")
     st.write("Good luck!")
