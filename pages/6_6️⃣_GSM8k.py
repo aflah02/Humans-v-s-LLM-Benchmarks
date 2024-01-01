@@ -18,8 +18,8 @@ split = st.sidebar.selectbox("Choose Split", ("Train", "Test"), disabled=gameSta
 winogrande_subsets = ['main', 'socratic']
 subset = st.sidebar.selectbox("Choose Subset", winogrande_subsets, disabled=gameState != "preStart")
 
-data = pd.read_parquet(os.path.join(data_folder, f'gsm8k-{subset}-{split}.parquet')) if '6_data' not in st.session_state else st.session_state['6_data']
-total_questions = len(pd.read_parquet(os.path.join(data_folder, f'gsm8k-{subset}-{split}.parquet')))
+data = pd.read_parquet(os.path.join(data_folder, f'gsm8k-{subset}-{split.lower()}.parquet')) if '6_data' not in st.session_state else st.session_state['6_data']
+total_questions = len(pd.read_parquet(os.path.join(data_folder, f'gsm8k-{subset}-{split.lower()}.parquet')))
 
 num_questions = st.sidebar.text_input("Number of Questions (Total Questions: {})".format(total_questions), 10, disabled=gameState != "preStart")
 num_questions = int(num_questions) if num_questions.isdigit() else 10
