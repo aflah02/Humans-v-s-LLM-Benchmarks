@@ -22,9 +22,9 @@ split = st.sidebar.selectbox("Choose Split", ("Train", "Validation", "Test"), di
 winogrande_subsets = ['winogrande_xs', 'winogrande_s', 'winogrande_m', 'winogrande_l', 'winogrande_xl', 'winogrande_debiased']
 subset = st.sidebar.selectbox("Choose Subset", winogrande_subsets, disabled=gameState != "preStart")
 
-data = pd.read_parquet(os.path.join(data_folder, f'Winogrande-{subset}-{split}.parquet')) if '5_data' not in st.session_state else st.session_state['5_data']
+data = pd.read_parquet(os.path.join(data_folder, f'winogrande-{subset}-{split}.parquet')) if '5_data' not in st.session_state else st.session_state['5_data']
 
-total_questions = len(pd.read_parquet(os.path.join(data_folder, f'Winogrande-{subset}-{split}.parquet')))
+total_questions = len(pd.read_parquet(os.path.join(data_folder, f'winogrande-{subset}-{split}.parquet')))
 
 num_questions = st.sidebar.text_input("Number of Questions (Total Questions: {})".format(total_questions), 10, disabled=gameState != "preStart")
 num_questions = int(num_questions) if num_questions.isdigit() else 10
